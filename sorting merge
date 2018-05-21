@@ -1,0 +1,68 @@
+#include<conio.h>
+#include<stdlib.h>
+#include <iostream>
+#define data 5
+
+using namespace std;
+
+void sortbagi_dua(int a, int b);
+void array(int p, int q, int r, int s);
+
+int simpan[data];
+
+void sortbagi_dua(int i, int j) {
+    int m;
+
+    if (i < j) {
+        m = (i + j) / 2; 
+        sortbagi_dua(i, m);
+        sortbagi_dua(m + 1, j);
+        array(i, m, m + 1, j);
+    }
+}
+
+void array(int a, int b, int c, int d) {
+    int t[50];
+    int i = a, j = c, k = 0;
+
+    while (i <= b && j <= d) {
+        if (simpan[i] < simpan[j])
+            t[k++] = simpan[i++];
+        else
+            t[k++] = simpan[j++];
+    }
+
+    while (i <= b)
+        t[k++] = simpan[i++];
+
+    while (j <= d)
+        t[k++] = simpan[j++];
+
+    for (i = a, j = 0; i <= d; i++, j++)
+       simpan[i] = t[j];
+}
+
+int main() {
+    int i;
+
+    cout << "program sort merge " <<endl;
+      for (i = 0; i < data; i++){
+	cout << "\n tekan Enter " << i+1 << " masukkan elemen yang akan di sorting : " << endl;
+        cin >> simpan[i];}
+
+    cout << "\n\data yang belum di sorting  :";
+    for (i = 0; i < data; i++) {
+        cout << "\t" << simpan[i];
+    }
+
+   sortbagi_dua(0, data - 1);
+
+    cout << "\n\n Hasil sorting data :";
+    for (i = 0; i < data ;i++) {
+        cout << "\t" << simpan[i];
+    }
+
+    getch();
+
+}
+
