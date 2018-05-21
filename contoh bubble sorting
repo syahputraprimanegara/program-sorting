@@ -1,0 +1,35 @@
+//m.syahputra prima negara : 1717051057
+//jodi affandi :  1717051065
+#include<iostream>
+ 
+using namespace std;
+ 
+int main()
+{
+    int data_inputan[50];
+	int n,temp;
+    cout<<"Masukkan jumlah data yang akan di sortir" << " : " ;
+    cin>>n;
+    system ("cls");
+    cout<<"masukkan setiap indeks datanya: "<<endl;
+    for(int i=0;i<n;++i){
+    cout << "data ke : " << i+1 << " : " ;
+        cin>>data_inputan[i];}
+        
+    for(int i=1;i<n;++i)
+    {
+        for(int j=0;j<(n-i);++j)
+            if(data_inputan[j]>data_inputan[j+1])
+            {
+                temp=data_inputan[j];
+                data_inputan[j]=data_inputan[j+1];
+                data_inputan[j+1]=temp;
+            }
+    }
+    
+    cout<<"data yang telah di sort dengan tipe sort bubble:";
+    for(int i=0;i<n;++i)
+        cout<<" "<<data_inputan[i];
+        
+    return 0;
+}
