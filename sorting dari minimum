@@ -1,6 +1,7 @@
 
 //program sorting dengan metode perbandingan
 // nama: M syahputra prima negara
+// nama: jodi afandi
 #include <iostream>
 using namespace std;
 int main (){
