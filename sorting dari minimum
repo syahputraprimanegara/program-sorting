@@ -1,0 +1,31 @@
+
+//program sorting dengan metode perbandingan
+// nama: M syahputra prima negara
+#include <iostream>
+using namespace std;
+int main (){
+	int x,d;
+	int urutan;
+	int min;
+	int input_data[5]; //banyaknya data yang akan di inputkan guna disortir sebanyak 5
+	for (x=0;x<5;x++) {
+		cout << x+1 << " silahkan untuk memasukkan data yang akan di sortir : " << " : " ; cin >> input_data[x];
+	}
+	for (x=0;x<4;x++){
+		min=x; //setiap inputan pertama dianggap sebagai nilai minimum
+			for (d=x+1;d<5;d++){
+				if (input_data[min]>input_data[d]) //saat indeks data ke d lebih besar dari indeks data minimum kita simpan
+				{	min=d;							//sebagai minimum baru
+				}
+				
+			}
+			urutan=input_data[min]; //menampilkan urutan sebagai indeks data minimum dimana dqta minimum diraih dari c=d;
+			input_data[min]=input_data[x]; //data minimum bernilai sama dengan data indeks data ke x
+			input_data[x]=urutan; //data minimum disimpan dan diulang untuk sortir dari data terbesar kedua dengan ketiga
+	}
+	cout << "urutan dari data terbesar setelah di perbandingkan setiap indeks data" << endl;
+	for (x=0;x<5;x++){
+		cout << input_data[x] << endl; //menampilkan data terbesar secara berulang sebanyak 5 kali;
+	}
+	return 0;
+}
